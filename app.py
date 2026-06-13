@@ -29,14 +29,15 @@ st.subheader("Análisis territorial por provincias a partir de datos mensuales d
 
 st.markdown(
     """
-Esta aplicación permite explorar la distribución territorial de la actividad hotelera en España.
+Esta aplicación permite explorar la distribución territorial, temporal y estacional de la actividad hotelera en España.
 El análisis combina variables de **oferta hotelera**, como establecimientos, plazas, ocupación y personal empleado,
 con variables de **demanda turística reciente**, como viajeros, pernoctaciones y estancia media.
 
-La web está organizada en dos páginas principales:
+La web está organizada en tres páginas principales:
 
 - **Exploración**: análisis temporal, rankings provinciales y comparación entre comunidades autónomas.
-- **Mapa**: mapa coroplético interactivo por provincia, con selección de año, mes y variable.
+- **Mapa**: mapa coroplético interactivo por provincia, con selección de año, mes, variable y escala de color.
+- **Estacionalidad**: análisis mensual mediante heatmap, perfil medio anual y ranking de concentración estacional.
 """
 )
 
@@ -132,7 +133,7 @@ st.divider()
 
 st.header("Lectura inicial")
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown(
@@ -151,6 +152,16 @@ with col2:
 
 Las variables de viajeros y pernoctaciones permiten analizar la intensidad turística reciente.
 En la aplicación se usan especialmente para comparar provincias durante 2025.
+"""
+    )
+
+with col3:
+    st.markdown(
+        """
+### Estacionalidad
+
+La frecuencia mensual de los datos permite estudiar patrones de temporada alta y baja,
+así como comparar territorios con actividad concentrada o más estable durante el año.
 """
     )
 
